@@ -179,3 +179,11 @@ docker run -d -p 5000:5000 node-frontend
 docker build -t node-backend .
 docker run -d -v $(pwd)/logs.txt:/backend-example-docker/logs.txt -p 8000:8000 node-backend
 ```
+
+## 1.7
+
+Run [this](https://github.com/rovaniemi/exam-archive-prototype) prototype application in port 3000
+
+```
+docker run -d -p 3000:3000 tarpisto-proto
+```
