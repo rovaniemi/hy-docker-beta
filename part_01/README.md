@@ -72,15 +72,49 @@ Commands
 ```
 docker build -t curl .
 docker run -d --rm -it --name curler curl sh -c 'read website; sleep 3; curl http://$website'
-docker attach curl
-google.com
+docker attach curler
+example.com
 
-<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
-<TITLE>301 Moved</TITLE></HEAD><BODY>
-<H1>301 Moved</H1>
-The document has moved
-<A HREF="http://www.google.com/">here</A>.
-</BODY></HTML>
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+    body {
+        background-color: #f0f0f2;
+        margin: 0;
+        padding: 0;
+        font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    }
+    div {
+        width: 600px;
+        margin: 5em auto;
+        padding: 50px;
+        background-color: #fff;
+        border-radius: 1em;
+    }
+    a:link, a:visited {
+        color: #38488f;
+        text-decoration: none;
+    }
+    @media (max-width: 700px) {
+        body {
+            background-color: #fff;
+        }
+        div {
+            width: auto;
+            margin: 0 auto;
+            border-radius: 0;
+            padding: 1em;
+        }
+    }
+    </style>
+</head>
 ```
 
 ## 1.4
@@ -185,5 +219,5 @@ docker run -d -v $(pwd)/logs.txt:/backend-example-docker/logs.txt -p 8000:8000 n
 Run [this](https://github.com/rovaniemi/exam-archive-prototype) prototype application in port 3000
 
 ```
-docker run -d -p 3000:3000 tarpisto-proto
+docker run -d -p 3000:3000 rovaniemi/tarpisto-proto
 ```
